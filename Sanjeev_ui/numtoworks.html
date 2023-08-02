@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function numtowords(n) {
+        if (n < 0) return false;
+        single_digit = [
+          "",
+          "One",
+          "Two",
+          "Three",
+          "Four",
+          "Five",
+          "Six",
+          "Seven",
+          "Eight",
+          "Nine",
+        ];
+        double_digit = [
+          "Ten",
+          "Eleven",
+          "Twelve",
+          "Thirteen",
+          "Fourteen",
+          "Fifteen",
+          "Sixteen",
+          "Seventeen",
+          "Eighteen",
+          "Nineteen",
+        ];
+        below_hundred = [
+          "Twenty",
+          "Thirty",
+          "Forty",
+          "Fifty",
+          "Sixty",
+          "Seventy",
+          "Eighty",
+          "Ninety",
+        ];
+        if (n === 0) return "Zero";
+        function translate(n) {
+          word = "";
+          if (n < 10) {
+            word = single_digit[n] + " ";
+          } else if (n < 20) {
+            word = double_digit[n - 10] + " ";
+          } else if (n < 100) {
+            rem = translate(n % 10);
+            word = below_hundred[(n - (n % 10)) / 10 - 2] + " " + rem;
+          } else if (n < 1000) {
+            word =
+              single_digit[Math.trunc(n / 100)] +
+              " Hundred " +
+              translate(n % 100);
+          } else if (n < 1000000) {
+            word =
+              translate(parseInt(n / 1000)).trim() +
+              " Thousand " +
+              translate(n % 1000);
+          } else if (n < 1000000000) {
+            word =
+              translate(parseInt(n / 1000000)).trim() +
+              " Million " +
+              translate(n % 1000000);
+          } else {
+            word =
+              translate(parseInt(n / 1000000000)).trim() +
+              " Billion " +
+              translate(n % 1000000000);
+          }
+          return word;
+        }
+        result = translate(n);
+        return result.trim() + ".";
+      }
+      var a = prompt("enter the number:");
+      alert(numtowords(a));
+
+      /* arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+              var a = prompt("enter the number:");
+              let text = a.toString(a.length);
+              console.log(text);
+              a = a.split("");
+              a.reverse();
+              let x = a.length;
+
+
+              while (x != 0) {
+                let y = a[x - 1];
+                z = temparr[y];
+                let n = indication[y];
+                alert(n);
+                result[x] = z + n;
+                x--;
+              }
+
+              alert(result);*/
+    </script>
+  </head>
+  <body>
+    <form name="">
+      <input
+        type="button"
+        name="btn1"
+        id="btn1"
+        value="dateDemo"
+        onclick="numtowords()"
+      />
+    </form>
+  </body>
+</html>

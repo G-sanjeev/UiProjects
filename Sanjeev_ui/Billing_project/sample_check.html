@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="sample_page.js" type="text/javascript">
+  
+
+    </script>
+    <script src="sample_page1.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <h1><a name="next"></a>billing page</h1>
+    <form action="">
+      <table  border="2">
+        <tr>
+          <th>prod_id</th>
+          <th>Q.nos</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" name="" placeholder="Enterprdid" id="prdid" />
+          </td>
+          <td>
+            <input type="text" name="" placeholder="Quantity" id="qnos" />
+          </td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="Enter" onclick="getCube()"/> </td>Total Amount:
+            
+        </tr>
+      </table>
+      <table id="table" border="1">
+        <thead>
+          <tr >
+            <th colspan="4"> <h1>sanjeev</h1></th>
+          </tr>
+          <tr>
+            <th align="Right" colspan="2">Date:</th>
+            <th  colspan="2" id= "date"></th>
+           
+          </tr>
+          <tr> <th align="Right" colspan="2">Place:</th>
+          <th colspan="2" id="place">Bangalore</th></tr>
+
+          <tr>
+            
+            <th>Product_id</th>
+            <th>prodct_name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+
+          </tr>
+        </thead>
+          <tbody></tbody>
+          <tr> <td colspan="2"><input type="button" value="Print" onclick="finalPrice()"/></td>
+            <td colspan="2"><input type="button" value="Enter date"onclick="printdate()"></td></tr>
+         
+          <tr><td>Total Amount+ 18% GST: </td> <td colspan="4" id="gstamount"></td></tr>
+           <tr> <td>          Amount in words
+          </td><td colspan="4" id="gstword"></td></tr>
+         
+      </table>
+  </body>
+</html>

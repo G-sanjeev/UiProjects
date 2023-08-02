@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enchancement</title>
+    <script>
+      <!--
+      function shape(type) {
+        this.type = type;
+        this.getType = function () {
+          alert(this.type);
+        };
+      }
+      function triangle(a, b, c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.getperimeter = function () {
+          alert(this.a + this.b + this.c);
+        };
+      }
+      function circle(r) {
+        this.r = r;
+        this.getarea = function () {
+          alert(this.r * this.r * Math.PI);
+        };
+        this.getcircumference = function () {
+          alert(2 * this.r * this.r * Math.PI);
+        };
+      }
+
+      function rectangle(a, b) {
+        this.a = a;
+        this.b = b || a;
+        if (this.a == this.b) {
+          this.type = "square";
+        }
+        this.getArea = function () {
+          alert(this.a * this.b);
+        };
+      }
+
+      function init() {
+        triangle.prototype = new shape("Triangle");
+
+        var t = new triangle(1, 2, 3);
+        t.getperimeter();
+        t.getType();
+      }
+      function init2() {
+        circle.prototype = new shape("circle");
+        var x = new circle(2);
+
+        x.getarea();
+        x.getcircumference();
+      }
+      function init3() {
+        rectangle.prototype = new shape("rectangle");
+        var rec = new rectangle(2, 3);
+        rec.getArea();
+        rec.getType();
+      }
+
+      -->
+    </script>
+  </head>
+  <body>
+    <input type="button" value="Triangle" onclick="init()" />
+    <input type="button" value="circle" onclick="init2()" />
+    <input type="button" value="rectangle" onclick="init3()" />
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript">
+      var uprod_id;
+      let upnos;
+      var checkArray = [];
+
+      // var product_details = [
+      //   [1, "jam", 20, 50],
+      //   [2, "apple", 20, 80],
+      //   [3,"onion",50,20],
+      //   [4,"milk",30,30],
+      //   [5],[6],[7],[8],[9],[10],[11],[12][13],[14],[15],[16],[17],[18],[19][20],[21],[22],[23],[24],[25],[26],[27],[28],[29],[30]
+      // ];
+      function getCube(){
+        uprod_id = document.getElementById("prdid").value;
+        upqnos = parseInt(document.getElementById("qnos").value);
+        let product_details =[{prdid:101,prname:"apple",price:100},
+        {prdid:102,prname:"orange",price:50},
+        {prdid:103,prname:"banana",price:30},
+        {prdid:104,prname:"graphes",price:40},
+        {prdid:105,prname:"leechi",price:10,}]
+        var flag = false;
+        // Object method using for each loop
+product_details.forEach(function(i){
+ 
+{  if((uprod_id == i.prdid) && ((checkArray.length ==0 && checkArray.length <=5) || (checkArray.find(obj=> obj.prdid != uprod_id))) ){
+        const group = {prdid:i.prdid,prname:i.prname,quantity : upqnos,price: i.price }
+              checkArray.push(group)
+            console.log((checkArray));
+            console.log("found the product");
+
+            function printDetail(){
+              const body = document.querySelector("#table tbody");
+
+              body.innerHTML=""
+              checkArray.forEach(item =>{
+                const row= document.createElement("tr");
+                for(let value in item){
+                  const cell = document.createElement("td");
+                  cell.textContent =item[value ];
+                  row.appendChild(cell);
+                }
+                body.appendChild(row);
+              })
+            
+            }
+            printDetail();
+
+/*
+if(userid === productid)
+{
+  if(arraycheck.length < 5) && productid != arraycheckId){
+    arraycheck.push(element)
+  }
+  else if(productid == arraycheckId){
+    qty += userqty;
+  }
+  else{
+    alert(Limit Exceed);
+  }
+
+
+  }
+
+}
+else{
+  alert(not found)
+}
+
+*/
+
+
+            window.printDetails=printDetail;
+
+            // function printDetails(){
+            //   var res = upqnos* i.price;
+            //   document.getElementById("td").innerHTML = i.prdid;
+            //   document.getElementById("td1").innerHTML = i.prname;
+            //   document.getElementById("td2").innerHTML = upqnos;
+            //   document.getElementById("td3").innerHTML = res;
+            // }
+            // printDetails();
+            // // Globally declaring the function 
+            // window.printDetail =printDetails;
+            return false;
+      
+
+      }
+
+      else{
+        if((uprod_id == i.prdid) && (checkArray.length >=0 && checkArray.length <=5)){
+          checkArray.forEach(function(j){
+            upqnos = j.quantity + upqnos;
+            console.log(upqnos);
+            res = upqnos* j.price;
+            console.log(res);
+            console.log(j.quantity);
+          })
+          if(checkArray.find(obj=> obj.prdid == uprod_id)){
+            console.log(checkArray.find(obj=> obj.prdid == uprod_id));
+            let ind = checkArray.findIndex(obj=> obj.prdid == uprod_id );
+            console.log("spliced value");
+            console.log(checkArray.splice("pliced valuse" +ind));
+          }
+          const group = {prdid:i.prdid,prname:i.prname,quantity : upqnos,price: res }
+              checkArray.push(group)
+          console.log(checkArray );
+          printDetails();
+          // printDetail();
+          // res = upqnos * i.price;
+          // document.getElementById("td").innerHTML = i.prdid;
+          // document.getElementById("td1").innerHTML = i.prname;
+          //     document.getElementById("td2").innerHTML = upqnos;
+          //     document.getElementById("td3").innerHTML = res;
+        }
+      }
+      
+}}
+
+)
+}
+
+
+
+
+        // product_details.forEach (function(i){
+        //   if( (uprod_id == i.prdid)){
+        //     if(!(checkArray.includes(uprod_id))){ 
+        //       const group = {prdid:i.prdid,prname:i.prname,quantity : upqnos,price: i.price }
+        //       checkArray.push(group)
+        //     console.log((checkArray));
+        //     console.log("found the product");
+        //     (function(){
+        //       var res = upqnos* i.price;
+        //       document.getElementById("td").innerHTML = i.prdid;
+        //       document.getElementById("td1").innerHTML = i.prname;
+        //       document.getElementById("td2").innerHTML = upqnos;
+        //       document.getElementById("td3").innerHTML = res;
+        //     })();
+        //     return false;}
+        //     else{
+        //     if ((uprod_id == i.prdid) && (( checkArray.includes(uprod_id)))){
+        //       console.log('re entered product')
+        //       console.log(checkArray)
+        //     }
+        //   }
+           
+        //   }
+         
+
+
+
+
+
+      //   })
+        
+      // }
+      
+       
+
+    </script>
+  </head>
+  <body>
+    <h1><a name="next"></a>billing page</h1>
+    <form action="">
+      <table  border="2">
+        <tr>
+          <th>prod_id</th>
+          <th>Q.nos</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" name="" placeholder="Enterprdid" id="prdid" />
+          </td>
+          <td>
+            <input type="text" name="" placeholder="Quantity" id="qnos" />
+          </td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="Enter" onclick="getCube()"/> </td>
+        </tr>
+      </table>
+      <table id="table" border="1">
+        <thead>
+          <tr>
+            <th>Product_id</th>
+            <th>prodct_name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+
+          </tr>
+        </thead>
+          <tbody></tbody>
+          <!-- <tr>
+            <td id = "td"></td>
+            <td id = "td1"></td>
+            <td id = "td2"></td>
+            <td id = "td3"></td>
+          </tr> -->
+      </table>
+
+  </body>
+</html>

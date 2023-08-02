@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dom Level 2</title>
+    <script></script>
+    <script language="JavaScript">
+      <!--
+      var newPara, newText, bodyRef;
+      function addNode() {
+        newPara = document.createElement("p");
+        newText = document.createTextNode("hello lumen world");
+        newPara.appendChild(newText);
+        bodyRef = document.getElementsByTagName("body");
+        bodyRef[0].appendChild(newPara);
+        newPara.setAttribute("align", "right");
+      }
+      function deleteNode() {
+        var parent = document.getElementById("div1");
+        var child = document.getElementById("span1");
+        parent.removeChild(child);
+        parent.innerHTML = "<b>" + document.lastModified + "</b>";
+      }
+      function init() {
+        var button = document.getElementById("btn1");
+        button.addEventListener("click", addNode);
+      }
+      //-->
+    </script>
+  </head>
+  <body onload="init()">
+    <h1>DOm demo</h1>
+    <div id="div1">Content to span <span id="span1">delete</span></div>
+    <form name="frm1">
+      <input type="button" id="btn1" name="btn1" value="Add Node" />
+      <input
+        type="button"
+        name="btn1"
+        value="delete Node"
+        onclick="deleteNode()"
+      />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+p {
+  font-family: Verdana;
+  /*color: #ffff00;*/
+}
+h2 {
+  font-family: Calibri;
+  background-color: #aabbcc;
+}
+p.author1 {
+  color: #ffff00;
+  font-family: Verdana;
+}
+p.author2 {
+  color: #00ff66;
+  font-family: Verdana;
+}
+
+#footer {
+  font-family: "verdana";
+  text-align: center;
+  text-decoration: underline;
+}

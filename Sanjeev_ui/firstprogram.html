@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="My first html document" />
+    <title>First HTML Document</title>
+    <meta /*http-equiv="refresh" */content="3" />
+    <link rel="stylesheet" type="text/css" href="first.css" />
+    <style>
+      #div1 > b {
+        color: ;
+      }
+      #div1 {
+        position: absolute;
+        left: 150px;
+        top: 150px;
+        width: 200px;
+        height: 150px;
+        background-image: url("download.png");
+        border-style: solid;
+        border-color: #000;
+        border-width: 2px;
+        z-index: 1;
+        overflow: auto;
+      }
+      #div2 {
+        position: absolute;
+        left: 250px;
+        top: 350px;
+        width: 400px;
+        height: 450px;
+        background-image: url("download.png");
+        /*background-color: #ffff00;*/
+        border-style: solid;
+        border-color: #000;
+        border-width: 2px;
+        z-index: 2;
+        background-repeat: no-repeat;
+      }
+      div > p {
+        display: inline;
+      }
+      b {
+        display: block;
+      }
+
+      #p:first-letter {
+        font-size: 30pt;
+        color: #ff0000;
+      }
+    </style>
+    <script language="JavaScript">
+      <!--
+      /*function greeting() {
+              if (arguments.length == 0) {
+                alert("welcome user!");
+              }
+              if (arguments.length == 1) {
+                alert("welcome" + arguments[0]);
+              }
+              if (arguments.length == 2) {
+                alert("welcome" + arguments[0] + arguments[1]);
+              }
+            }
+            greeting();
+            greeting("laxman");
+            greeting("laxman", 101);*/
+      /*function arrayDemo() {
+              var tmparray = new Array();
+              tmparray[0] = "h";
+              tmparray[1] = "e";
+              tmparray[2] = "l";
+              tmparray[3] = "l";
+              tmparray[4] = "o";
+              alert(tmparray.length);
+              alert(tmparray.toString());
+              tmparray.length = 3;
+              alert(tmparray.toString());
+              alert(tmparray.reverse());
+              alert(tmparray.sort());
+            }*/
+
+      /*function dateDemo() {
+              var dt = new Date();
+              alert(dt.getDay());
+              alert(dt.getFullYear());
+              alert(dt.getMonth() + 1);
+              alert(dt.getHours());
+              alert(dt.getMinutes());
+              alert(dt.getSeconds());
+              alert(dt.toGMTString());
+              alert(dt.toLocaleDateString());
+              const weekday = ["sunday", "mon", "tue", "wed", "thu", "fri", "sat"];
+              var indDate = new Date();
+              indDate.setFullYear(2002, 2, 16);
+              alert(weekday[indDate.getDay()]);
+            }*/
+
+      /*function mathDemo() {}*/
+
+      /*function stringDemo() {
+              var mystr = new String("hello@world");
+              var a = mystr.indexOf("@"); email
+              if (a == "@") {
+                alert("nope");
+              } else {
+                alert("ok");
+              }
+              alert(mystr.indexOf("e"));
+              alert(mystr.charAt(4));
+              alert(mystr.charCodeAt(4));
+              alert(mystr.length);
+              alert(mystr.toUpperCase());
+              alert(mystr.substring(3, 5));
+              var myStr = "my name is sanjeev";
+              var myarr = myStr.split(" ");
+              alert(myarr[0]);
+            }*/
+
+      /*var manager, executive;
+            direct calling of object;
+            function createObjects() {
+              manager = new Object();
+              executive = new Object();
+              manager.name = "laxman";
+              executive.name = "ram";
+            }
+            function getObjectData() {
+              alert(manager.name);
+            }
+            createObjects();
+            getObjectData();
+
+            /*function employee(name, email, dept) {
+              this.EmpName = name;
+              this.EmpEmail = email;
+              this.EmpDept = dept;
+            }
+
+            function makeObject() {
+              manager = new employee("Sanjeev", "sanjeev@123", "juniorsde");
+              executive = new employee("Ram", "Ram@123", "Seniorsde");
+            }
+            function getData() {
+              makeObject();
+              alert(manager.EmpName);
+              alert(executive.EmpName);
+            }
+            makeObject();
+            getData();*/
+
+      /*function checkData() {
+              var pattern = /cat/gi; /*not in quotes , pre,suff with slash
+              var regExp = new RegExp(pattern);
+              while (
+                (results = regExp.exec("cats and dogs and cats again!")) != null
+              ) {
+                alert("found");
+                alert(results[0] + regExp.lastIndex);
+              }
+            }*/
+
+      /*function myClass() {
+              this.propertytwo = 2;
+              this.propertythree = 3;
+            } /* we can access but we can't change
+            var myinstance = new myClass();
+            alert(myinstance.propertyone);
+
+            myClass.prototype.propertyone = 1;
+            myClass.prototype.propertytwo = 5;
+            alert(myinstance.propertyone);
+            alert(myinstance.propertytwo);
+            myClass.prototype.propertyone = 2;
+            alert(myinstance.propertyone);*/
+
+      /*Date.prototype.getDayName = function ()ananomous function {
+              var weekDays = [
+                "sunday",
+                "monday",
+                "Tuesday",
+                "wednesday",
+                "friday",
+                "saturday",
+              ];
+              return weekDays[this.getDay()];
+            };
+            var dt = new Date();
+            alert(dt.getDayName());*/
+
+      /*function Vehicle(engine, wheels) {
+              this.hasEngine = engine || false;
+              this.hasWheels = wheels || false;
+            }
+            function Car(make, model, hp) {
+              this.make = make;
+              this.model = model;
+              this.hp = hp;
+            }
+
+            function showSpecs() {
+              alert(
+                this.make +
+                  " " +
+                  this.model +
+                  " " +
+                  this.hp +
+                  " " +
+                  this.hasEngine +
+                  " " +
+                  this.hasWheels
+              );
+            }
+
+            function proto() {
+              Car.prototype = new Vehicle(
+                true,
+                true
+              ); /* with the establishment of connection bw two template
+      is called prototpal inheritance
+              Car.prototype.dispSpecs =
+                showSpecs; /* aliasing : binding of the car function with the showspecs template.
+              var myPhantom = new Car("Royal Rolls", "ghost", 567);
+              myPhantom.dispSpecs();
+              Vehicle.prototype.hasTrunk = true;
+              alert(myPhantom.hasTrunk);}*/
+
+      /*function emit420() {
+        var num = 418;
+        var emitval = function () {
+          alert(num);
+        };
+        num++;
+        return emitval;
+      }
+      // reference counting
+      var result = emit420();
+      result();
+      result();*/
+      //BOM OBJECTS : 1.window
+      //1.window object : load, unload
+      // 1. window methods: open(),close(),settimeout(),cleartTimeout(),setinterval(),settimeout(),
+      //alert(): flash with one button,prompt(),confirm(): flash with two button : with boolean values
+      //window properties: innerHeight,innerWidth,status(can be used fixed status bar):section to connecting msg.
+      /*var newWin, tmr;
+      function openWin() {
+        newWin = window.open(
+          "http://www.lumen.com",
+          "",
+          "top =100,left=250,height=200,width=250"
+        );
+      }
+      function closeWin() {
+        newWin.close(); //closes the child windwow
+      }
+      function closeWin1() {
+        self.close(); // initially to close the parent window
+      }
+      function delayedOpenWin() {
+        tmr = window.setTimeout(openWin, 5000);
+      }
+      window.clearTimeout(tmr);*/
+
+      //2.location object : an object which provide current url
+      //location properties: (href inter  , hash intra) read write property,
+      // port(read only property: http,https): current
+      //protocol(read only)
+      //hostname(read only)
+      //location method: reload
+
+      //3.Navigator object:info about the browser itself
+      // appName,appversion,userAgent (readonly)
+      //Navigator method: javaEnable(): boolean
+
+      //4. History: contain Urls visited by user
+      // history properties : length (read only no pages in the history)
+      // history method: back(),forward(),go()
+
+      //5. Document object: html loaded ,it has two event load, unload.
+      // last modify read only property.
+      //document method: open() not takes parameters ,
+      // write() : used to writting with the document.
+      // close() : we have done with writting
+
+      var newWin, tmr;
+      /*var form_detail =
+        "<form name ='frm1'> <input type='button' name = 'btn1' value= 'click' onclick='getdata()'> </form>";
+      function openWin() {
+        newWin = window.open("", "", "top =100,left=250,height=200,width=250");
+        newWin.document.open();
+        newWin.document.write("<html><head><title>dynamic document</title>");
+        newWin.document.write("</head><script> function getdata() {alert('hello');}");
+          newWin.document.write("<body>")
+          newWin.document.write("<h1>My name is sanjeev</h1>");
+        newWin.document.write("<p>" + newWin.document.lastModified + "</p");
+        newWin.document.write(form_detail);
+        newWin.document.write("</body></html>");
+        newWin.document.close();
+      }*/
+
+      function openWin() {
+        if (document.forms[0].elements[0].value == "") {
+          alert("please find this field");
+          document.forms[0].elements[0].focus();
+        }
+      }
+      function closeWin() {
+        newWin.close(); //closes the child windwow
+      }
+      function closeWin1() {
+        self.close(); // initially to close the parent window
+      }
+      function delayedOpenWin() {
+        tmr = window.setTimeout(openWin, 5000);
+      }
+      window.clearTimeout(tmr);
+
+      // DOM level 2:hold , parse, inmemory tree,
+      //references to certain resources,
+      //css files , emitted.
+      // DOM 2 Like API
+
+      //-->
+    </script>
+  </head>
+  <body>
+    <h2>This is my firstprogram file</h2>
+
+    <div id="div1">
+      <b>Hello</b> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Quod perspiciatis ea reiciendis minus ut aliquam quisquam cumque quis
+      tempora! Itaque, velit non ad iusto sunt aliquid doloribus veniam nulla
+      earum. Lumen 1 . Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      Cupiditate quo ab, error voluptate molestias fugit quos pariatur
+      laudantium, minima ipsa mollitia atque excepturi, rem esse deleniti
+      repellendus minus? Accusamus, ipsam.
+    </div>
+    <div id="div2">
+      Hello Lumen 2 .
+      <p>my name is <b>sanjeev</b></p>
+    </div>
+    <p>my name is sanjeev</p>
+
+    <p align="center" style="text-decoration: underline">
+      this is my home on the web!
+    </p>
+    <a href="#top">go to </a>
+
+    <a href="http://www.googl e.com">Search</a>
+    <form name="form1">
+      Name: <input type="text" name="txtName" id="txtName" /><br />
+      <input type="button" value="prototype" onclick="prot()" />
+      <input type="button" value="Closure" onclick="closure()" />
+      <input type="button" value="Open window" onclick="openWin()" />
+      <input type="button" value="close window" onclick="closeWin()" />
+    </form>
+
+    <form name="">
+      <input
+        type="button"
+        name="btn1"
+        id="btn1"
+        value="dateDemo"
+        onclick="emit420()"
+      />
+    </form>
+    <form name="">
+      <input
+        type="button"
+        name="btn1"
+        id="btn1"
+        value="opennew window"
+        onclick="openWin()"
+      />
+    </form>
+    <form name="">
+      <input
+        type="button"
+        name="btn1"
+        id="btn1"
+        value="close window"
+        onclick="closeWin()"
+      />
+    </form>
+
+    <p>&copy;2023.All rights reserved.</p>
+    <p class="author1">Author1</p>
+    <p class="author2">Author2</p>
+  </body>
+</html>
